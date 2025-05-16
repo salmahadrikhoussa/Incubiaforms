@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toutes les inscriptions</title>
+</head>
+<body>
+    <h1>Toutes les inscriptions</h1>
+
+    <h2>Étape 1</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom complet</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Ville</th>
+                <th>Conditions acceptées</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reg in registrations_step1 %}
+            <tr>
+                <td>{{ reg.full_name }}</td>
+                <td>{{ reg.email }}</td>
+                <td>{{ reg.phone_number }}</td>
+                <td>{{ reg.city }}</td>
+                <td>{{ reg.terms_accepted }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Étape 2</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom du projet</th>
+                <th>Niveau du projet</th>
+                <th>Industrie</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reg in registrations_step2 %}
+            <tr>
+                <td>{{ reg.project_name }}</td>
+                <td>{{ reg.project_level }}</td>
+                <td>{{ reg.industry }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Étape 3</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Mentorat</th>
+                <th>Formation</th>
+                <th>Financement</th>
+                <th>Ressources</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reg in registrations_step3 %}
+            <tr>
+                <td>{{ reg.mentoring }}</td>
+                <td>{{ reg.training }}</td>
+                <td>{{ reg.financing }}</td>
+                <td>{{ reg.resources }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
